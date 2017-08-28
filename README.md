@@ -6,7 +6,7 @@ Please email me for bugs/suggestions!
 
 ##Usage Examples
 
-### Printing to console the search result for 'Jita.'
+### Print the search result for 'Jita.'
 ```
 var esis = require('eve-swagger-simple');
 
@@ -23,16 +23,18 @@ async function search(word) {
 search('Jita');
 ```
 
-### Printing to console the wallet balance.
+### Print the wallet balance.
 ```
 var esis = require('eve-swagger-simple');
 
 async function showWallet() {
 
-    var wallet = await esis.request('/characters/95943055/wallet/', { 
+    var wallet = await esis.request('/characters/95943054/wallet/', { 
         character_id: 95943054,
         datasource: 'singularity', 
-        token: (character's access token here)
+        token: ... // Character's access token here.
+        .
+        .
         // Add other parameters if you need.
     });
 
@@ -41,7 +43,7 @@ async function showWallet() {
 showWallet();
 ```
 
-### Setting in-game autopilot.
+### Set in-game autopilot.
 ```
 var esis = require('eve-swagger-simple');
 
@@ -53,6 +55,8 @@ async function setAutopilot() {
         clear_other_waypoints: true,
         destination_id: 30000142,
         token: (character's access token here)
+        .
+        .
         // Add other parameters if you need.
     });
     console.log(autopilot);
@@ -61,10 +65,14 @@ setAutopilot();
 ```
 
 
-##Update
+##Updates
 ###1.0.2
 POST routes work now.
 ###1.0.3
 GET routes now working properly as before.
 ###1.0.4
 GET routes can now take arrays as arguments.
+###1.0.5
+README revision.
+###1.0.6
+README revision.
