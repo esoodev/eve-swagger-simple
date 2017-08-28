@@ -17,7 +17,7 @@ module.exports = {
                     reject(error);
                 } else if (response && body) {
                     var result = JSON.parse(body);
-                    if (result.error = 'Method not allowed') {
+                    if (result.error == 'Method not allowed') {
                         return this._post(route, parameters);
                     } else {
                         resolve(JSON.parse(body));

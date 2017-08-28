@@ -36,4 +36,6 @@ setAutopilot();
 
 ##Update
 ###1.0.2
-POST routes work now.  
+POST routes work now.
+###1.0.3
+GET routes now working properly as before.
