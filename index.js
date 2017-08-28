@@ -1,4 +1,5 @@
 var request = require('request');
+var querystring = require('querystring');
 const baseUrl = ('https://esi.tech.ccp.is/latest');
 
 module.exports = {
@@ -9,9 +10,9 @@ module.exports = {
         return new Promise((resolve, reject) => {
 
             request.get({
-                url: baseUrl+route,
-                qs: parameters
+                url: baseUrl+route+'?'+querystring.stringify(parameters)
             }, (error, response, body) => {
+
                 if (error) {
                     console.log(error);
                     reject(error);
