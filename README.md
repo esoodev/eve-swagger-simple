@@ -6,7 +6,7 @@ Please email me for bugs/suggestions!
 
 ##Usage Examples
 
-1) Printing to console the search result for 'Jita.'
+### Printing to console the search result for 'Jita.'
 ```
 var esis = require('eve-swagger-simple');
 
@@ -23,7 +23,7 @@ async function search(word) {
 search('Jita');
 ```
 
-2) Printing to console the wallet balance.
+### Printing to console the wallet balance.
 ```
 var esis = require('eve-swagger-simple');
 
@@ -41,7 +41,7 @@ async function showWallet() {
 showWallet();
 ```
 
-3) Setting in-game autopilot.
+### Setting in-game autopilot.
 ```
 var esis = require('eve-swagger-simple');
 
