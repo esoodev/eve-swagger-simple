@@ -19,7 +19,8 @@ module.exports = {
                 } else if (response && body) {
                     var result = JSON.parse(body);
                     if (result.error == 'Method not allowed') {
-                        return this._post(route, parameters);
+                        this._post(route, parameters);
+                        resolve({method: 'POST', url: baseUrl+route, qs: parameters});
                     } else {
                         resolve(JSON.parse(body));
                     }

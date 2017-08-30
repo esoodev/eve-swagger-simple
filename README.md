@@ -70,9 +70,5 @@ setAutopilot();
 POST routes work now.
 ###1.0.3
 GET routes now working properly as before.
-###1.0.4
-GET routes can now take arrays as arguments.
-###1.0.5
-README revision.
-###1.0.6
-README revision.
+###~1.0.5
+Bug fixes.
