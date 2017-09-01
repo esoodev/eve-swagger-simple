@@ -10,20 +10,30 @@ module.exports = {
         return new Promise((resolve, reject) => {
 
             request.get({
-                url: baseUrl+route+'?'+querystring.stringify(parameters)
+                url: baseUrl + route + '?' + querystring.stringify(parameters)
             }, (error, response, body) => {
 
                 if (error) {
-                    console.log(error);
                     reject(error);
                 } else if (response && body) {
-                    var result = JSON.parse(body);
-                    if (result.error == 'Method not allowed') {
-                        this._post(route, parameters);
-                        resolve({method: 'POST', url: baseUrl+route, qs: parameters});
-                    } else {
-                        resolve(JSON.parse(body));
+                    var result;
+
+                    try {
+                        result = JSON.parse(body);
+                    } catch (e) {
+                        reject(e);
                     }
+
+                    if (result.error == 'Method not allowed') {
+                        this._post(route, parameters).then(
+                            res => { resolve(res) },
+                            err => { reject(err) }
+                        );
+                    } else {
+                        resolve(result);
+                    }
+                } else {
+                    reject(response);
                 }
             });
         });
@@ -35,15 +45,13 @@ module.exports = {
         return new Promise((resolve, reject) => {
 
             request.post({
-                url: baseUrl+route,
+                url: baseUrl + route,
                 qs: parameters
             }, (error, response, body) => {
+
                 if (error) {
-                    console.log(error);
                     reject(error);
-                } else if (response && body) {
-                    resolve(JSON.parse(body));
-                }
+                } else { resolve('POST sent to ' + baseUrl + route + '\n' + JSON.stringify(parameters)); }
             });
         });
     }

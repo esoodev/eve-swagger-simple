@@ -14,7 +14,7 @@ esis.request('/search/', {
     categories: 'station,solarsystem',
     datasource: 'tranquility',
     search: 'Jita'
-}).then((result) => { console.log(result) });
+}).then((result) => { console.log(result) }, (error) => { console.log(error) });
 ```
 
 ### Print the wallet balance.
@@ -28,7 +28,7 @@ esis.request('/characters/95943054/wallet/', {
     .
     .
     // Add other parameters if you need.
-}).then((result) => { console.log(result) });
+}).then((result) => { console.log(result) }, (error) => { console.log(error) });
 ```
 
 ### Set in-game autopilot.
@@ -45,8 +45,7 @@ esis.request('/ui/autopilot/waypoint/', {
     .
     .
     // Add other parameters if you need.
-});
-
+}).then((result) => { console.log(result) }, (error) => { console.log(error) });
 ```
 
 
@@ -57,3 +56,5 @@ POST routes work now.
 GET routes now working properly as before.
 ###~1.0.8
 Bug fixes & README edits.
+###1.0.9
+Better promise rejection. No longer automatically outputs error to console; user should implement custom rejection handling.
