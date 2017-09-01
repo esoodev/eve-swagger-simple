@@ -1,6 +1,6 @@
 {
   "name": "eve-swagger-simple",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "Simple promise-based node.js module for utilizing Eve Swagger Interface.",
   "main": "index.js",
   "dependencies": {

@@ -54,7 +54,7 @@ esis.request('/ui/autopilot/waypoint/', {
 POST routes work now.
 ###1.0.3
 GET routes now working properly as before.
-###~1.0.8
+###~1.0.9
 Bug fixes & README edits.
-###1.0.9
+###1.1.0
 Better promise rejection. No longer automatically outputs error to console; user should implement custom rejection handling.
